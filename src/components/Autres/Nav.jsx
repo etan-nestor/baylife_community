@@ -1,12 +1,18 @@
+import {useState} from 'react';
 import { BiSearchAlt } from "react-icons/bi";
 import { FaCaretDown } from "react-icons/fa";
 import { ListItems, DropDownLinks } from '../../data/Items';
 import { Link } from 'react-router-dom';
 import DarkMode from '../DarkMode';
 import UserGuide from '../Guide/UserGuide';
+import Search from '../Search/Search';
 
 const Nav = () => {
+const [showSearch, setShowSearch] = useState(false);
 
+    const handleSearchIconClick = () => {
+        setShowSearch(true);
+    };
     return (
         <div>
             <div className="bg-green-400 dark:bg-gray-700 py-2">
@@ -62,12 +68,13 @@ const Nav = () => {
                                 S'inscrire
                             </button>
                             <div className="flex justify-center items-center gap-2">
-                                <div className="cursor-pointer bg-green-500 px-2 py-2 rounded-full drop-shadow-lg">
+                                <div onClick={handleSearchIconClick} className="cursor-pointer bg-green-500 px-2 py-2 rounded-full drop-shadow-lg">
                                     <BiSearchAlt className="text-2xl text-white font-bold" />
                                 </div>
                                 <input
                                     className="bg-green-500 border w-[200px] py-2 rounded-lg text-white border-green-400 placeholder-gray-200 shadow-inner drop-shadow-lg outline-none text-xl font-semibold px-7"
                                     type="text"
+                                    onFocus={() => setShowSearch(true)}
                                     placeholder="Rechercher......"
                                 />
                             </div>
@@ -78,6 +85,7 @@ const Nav = () => {
                     </div>
                 </div>
             </div>
+            {showSearch && <Search />}
             <UserGuide />
         </div>
     );
