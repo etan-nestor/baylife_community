@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState, useRef } from 'react';
 import { BiSearchAlt } from "react-icons/bi";
 import { FaCaretDown } from "react-icons/fa";
 import { ListItems, DropDownLinks } from '../../data/Items';
@@ -8,11 +8,24 @@ import UserGuide from '../Guide/UserGuide';
 import Search from '../Search/Search';
 
 const Nav = () => {
-const [showSearch, setShowSearch] = useState(false);
+    const [showSearch, setShowSearch] = useState(false);
+    const searchInputRef = useRef(null);
+    const searchContainerRef = useRef(null);
 
     const handleSearchIconClick = () => {
         setShowSearch(true);
+        searchInputRef.current.focus();
     };
+
+    const handleBlur = (e) => {
+        // Delay the hiding of the Search component to allow click events on it
+        setTimeout(() => {
+            if (searchContainerRef.current && !searchContainerRef.current.contains(document.activeElement)) {
+                setShowSearch(false);
+            }
+        }, 100);
+    };
+
     return (
         <div>
             <div className="bg-green-400 dark:bg-gray-700 py-2">
@@ -67,16 +80,18 @@ const [showSearch, setShowSearch] = useState(false);
                             <button className="cursor-pointer text-xl dark:bg-gray-700 dark:text-white dark:border-gray-100 dark:hover:border-green-400 font-semibold drop-shadow-lg text-black px-4 py-2 rounded-lg bg-green-400 border border-gray-800 hover:border-white hover:border-1 transition duration-300 ease-in-out">
                                 S'inscrire
                             </button>
-                            <div className="flex justify-center items-center gap-2">
+                            <div className="flex justify-center items-center gap-2 relative" ref={searchContainerRef} onBlur={handleBlur}>
                                 <div onClick={handleSearchIconClick} className="cursor-pointer bg-green-500 px-2 py-2 rounded-full drop-shadow-lg">
                                     <BiSearchAlt className="text-2xl text-white font-bold" />
                                 </div>
                                 <input
                                     className="bg-green-500 border w-[200px] py-2 rounded-lg text-white border-green-400 placeholder-gray-200 shadow-inner drop-shadow-lg outline-none text-xl font-semibold px-7"
                                     type="text"
+                                    ref={searchInputRef}
                                     onFocus={() => setShowSearch(true)}
                                     placeholder="Rechercher......"
                                 />
+                                {showSearch && <Search />}
                             </div>
                         </div>
                         <div className="mr-8 dark-mode-button">
@@ -85,7 +100,6 @@ const [showSearch, setShowSearch] = useState(false);
                     </div>
                 </div>
             </div>
-            {showSearch && <Search />}
             <UserGuide />
         </div>
     );

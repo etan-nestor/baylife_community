@@ -5,6 +5,7 @@ import Membres from './pages/Membres';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import TopNav from './components/Autres/TopNav';
 import Nav from './components/Autres/Nav';
+import BottomNav from './components/Autres/BottomNav';
 
 function App() {
 
@@ -18,6 +19,9 @@ function App() {
           </div>
           <div>
             <Nav />
+          </div>
+          <div>
+            <BottomNav />
           </div>
           <Routes>
             <Route exact path="/" element={<Home />} />
