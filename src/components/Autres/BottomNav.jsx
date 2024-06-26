@@ -1,8 +1,8 @@
+import { BsFacebook } from "react-icons/bs"; 
 import { BsTelegram } from "react-icons/bs";
 import { FaInstagramSquare } from "react-icons/fa";
 import { BsDiscord } from "react-icons/bs";
 import { Link } from 'react-router-dom';
-import { CiFacebook } from "react-icons/ci";
 import React, { useState, useEffect } from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 
@@ -21,7 +21,7 @@ const BottomNav = () => {
     }, [wordIndex, words]);
 
     return (
-        <div className="bg-green-300 py-4 dark:bg-gray-600 flex justify-between items-center">
+        <div className="bg-green-300 py-4 dark:bg-gray-600 flex justify-between items-center mt-[4rem]">
             <div className="flex flex-col md:flex-row items-center gap-5 ml-4 md:ml-[8em]">
                 <h5 className="border-b-4 border-b-slate-500 text-[18px] text-black font-semibold cursor-pointer hover:text-gray-800 dark:text-white dark:border-b-4 dark:border-b-green-500">
                     Nouveaux messages
@@ -31,7 +31,7 @@ const BottomNav = () => {
                 </h5>
             </div>
             <div className="absolute left-[50%] transform -translate-x-1/2 md:static md:transform-none md:left-auto">
-                <h1 className="text-2xl font-semibold dark:text-white">
+                <h1 className="text-xl font-semibold dark:text-white">
                     BAYLife {' '}
                     <span className={colors[wordIndex]}>
                         <Typewriter
@@ -47,17 +47,17 @@ const BottomNav = () => {
                 </h1>
             </div>
             <div className="mr-4 md:mr-[8em] flex justify-center items-center gap-5">
-                <Link>
-                    <CiFacebook />
+                <Link className="hover:transform hover:translate-y-1 transition duration-300">
+                    <BsFacebook  className="text-2xl dark:text-white text-black" />
                 </Link>
-                <Link>
-                    <BsDiscord />
+                <Link className="hover:transform hover:-translate-y-1 transition duration-300">
+                    <BsDiscord className="text-2xl dark:text-white text-black" />
                 </Link>
-                <Link>
-                    <FaInstagramSquare />
+                <Link className="hover:transform hover:translate-y-1 transition duration-300">
+                    <FaInstagramSquare className="text-2xl dark:text-white text-black" />
                 </Link>
-                <Link>
-                    <BsTelegram />
+                <Link className="hover:transform hover:-translate-y-1 transition duration-300">
+                    <BsTelegram className="text-2xl dark:text-white text-black" />
                 </Link>
             </div>
         </div>
