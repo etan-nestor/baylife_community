@@ -8,19 +8,17 @@ import Nav from './components/Autres/Nav';
 import BottomNav from './components/Autres/BottomNav';
 
 function App() {
-
-
   return (
     <>
       <div className="" >
         <BrowserRouter>
-          <div>
+          <div className="hidden md:block">
             <TopNav />
           </div>
           <div>
             <Nav />
           </div>
-          <div>
+          <div className="hidden md:block">
             <BottomNav />
           </div>
           <Routes>
