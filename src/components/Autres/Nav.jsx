@@ -4,6 +4,7 @@ import { FaCaretDown } from "react-icons/fa";
 import { ListItems, DropDownLinks } from '../../data/Items';
 import { Link } from 'react-router-dom';
 import DarkMode from '../DarkMode';
+import logo from '../../assets/images/logos/logo02.png';
 import UserGuide from '../Guide/UserGuide';
 import Search from '../Search/Search';
 
@@ -27,9 +28,9 @@ const Nav = () => {
     };
 
     return (
-        <div className="bg-green-400 fixed w-full md:h-[4rem] h-[3rem] dark:bg-gray-700 py-2">
-
+        <div className="bg-green-400 fixed w-full md:h-[4rem] h-[3.5rem] dark:bg-gray-700 py-2">
             <div className="flex justify-between items-center px-4 md:px-[8em]">
+
                 {/* menus */}
                 <div className="flex items-center gap-4">
                     <div className="md:hidden mr-2">
@@ -67,7 +68,10 @@ const Nav = () => {
                         </ul>
                     </div>
                 </div>
-
+                {/* logo */}
+                <div className="md:hidden">
+                    <img className="w-[80px] -mt-1" src={logo} alt="logo" />
+                </div>
                 {/* buttons */}
                 <div className="flex justify-center items-center gap-5 md:-mr-[7em] -mr-6">
                     <button className="md:block cursor-pointer text-sm md:text-xl dark:bg-gray-700 dark:text-white dark:border-gray-100 dark:hover:border-green-400 font-semibold drop-shadow-lg text-black md:px-4 md:py-2 px-2 py-1 rounded-lg bg-green-400 border border-gray-800 hover:border-white hover:border-1 transition duration-300 ease-in-out">
