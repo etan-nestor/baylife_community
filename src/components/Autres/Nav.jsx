@@ -73,7 +73,7 @@ const Nav = () => {
                     <img className="w-[80px] -mt-1" src={logo} alt="logo" />
                 </div>
                 {/* buttons */}
-                <div className="flex justify-center items-center gap-2 md:gap-5 md:-mr-[7em] -mr-7">
+                <div className="flex justify-center items-center gap-2 md:gap-5 md:-mr-[7em] -mr-8">
                     <button className="md:block cursor-pointer text-sm md:text-xl dark:bg-gray-700 dark:text-white dark:border-gray-100 dark:hover:border-green-400 font-semibold drop-shadow-lg text-black md:px-4 md:py-2 px-2 py-1 rounded-lg bg-green-400 border border-gray-800 hover:border-white hover:border-1 transition duration-300 ease-in-out">
                         Connexion
                     </button>
@@ -96,7 +96,7 @@ const Nav = () => {
             {/* responsive menu items */}
 
             {isMenuOpen && (
-                <div className="md:hidden mt-2 ml-1 bg-green-500 dark:bg-gray-800 w-[200px] h-[14rem] rounded-lg">
+                <div className="md:hidden mt-3 ml-1 bg-green-500 dark:bg-gray-800 w-[200px] h-[14rem] rounded-lg">
                     <ul className="flex flex-col items-start justify-center pt-4 gap-4 px-4 py-1">
                         {ListItems.map((item) => (
                             <li className="cursor-pointer w-full text-sm dark:text-white  dark:hover:border-green-400 font-semibold text-black px-2 py-1 rounded-md  border border-transparent hover:border-white hover:border-1 transition duration-300 ease-in-out" key={item.id}>
