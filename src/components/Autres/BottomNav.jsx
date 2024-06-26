@@ -21,7 +21,7 @@ const BottomNav = () => {
     }, [wordIndex, words]);
 
     return (
-        <div className="bg-green-300 py-4 dark:bg-gray-600 flex justify-between items-center mt-[4rem]">
+        <div className="bg-green-300 py-4 dark:bg-gray-600 flex justify-between items-center md:mt-[4rem] mt[2.5em]">
             <div className="flex flex-col md:flex-row items-center gap-5 ml-4 md:ml-[8em]">
                 <h5 className="border-b-4 border-b-slate-500 text-[18px] text-black font-semibold cursor-pointer hover:text-gray-800 dark:text-white dark:border-b-4 dark:border-b-green-500">
                     Nouveaux messages
