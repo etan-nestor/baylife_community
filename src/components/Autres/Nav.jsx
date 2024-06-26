@@ -73,7 +73,7 @@ const Nav = () => {
                     <img className="w-[80px] -mt-1" src={logo} alt="logo" />
                 </div>
                 {/* buttons */}
-                <div className="flex justify-center items-center gap-5 md:-mr-[7em] -mr-6">
+                <div className="flex justify-center items-center gap-2 md:gap-5 md:-mr-[7em] -mr-6">
                     <button className="md:block cursor-pointer text-sm md:text-xl dark:bg-gray-700 dark:text-white dark:border-gray-100 dark:hover:border-green-400 font-semibold drop-shadow-lg text-black md:px-4 md:py-2 px-2 py-1 rounded-lg bg-green-400 border border-gray-800 hover:border-white hover:border-1 transition duration-300 ease-in-out">
                         Connexion
                     </button>
